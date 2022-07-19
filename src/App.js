@@ -7,12 +7,11 @@ import About from './pages/About'
 import Error from './pages/Error'
 
 // Import Components
-// import Navbar from './components/Navbar'
-
+import Navigation from './components/Navigation';
 function App(props) {
   return (
     <Router>
-      {/* <Navbar/> */}
+      <Navigation/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='about' element={<About />} />
