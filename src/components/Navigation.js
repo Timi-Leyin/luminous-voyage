@@ -4,8 +4,9 @@ import logo from "../assets/logo.png"
 
 function Navigation(props) {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
+        <Navbar collapseOnSelect className='navbar navbar-default navbar-trans navbar-expand-lg fixed-top' expand="lg" bg="white" variant="light">
             <Container>
+                <Navbar.Toggle className='collaspsed' type="button" data-bs-toggle="collapse" data-bs-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation" />
                 <Navbar.Brand href="/">
                     <img
                         src={logo}
@@ -15,7 +16,7 @@ function Navigation(props) {
                         // className="d-inline-block align-top"
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              
                 <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mx-auto">
                     <Nav.Link href="/">HOME</Nav.Link>
