@@ -12,6 +12,8 @@ function HeroSection(props) {
     if (!ref.current) return;
     new Swiper(ref.current, {
       keyboard:true,
+      loop:true,
+      autoPlay:true,
       effect:'fade',
       pagination:{
         el:'.swiper-pagination',
@@ -31,8 +33,9 @@ function HeroSection(props) {
               cupiditate ea nam praesentium debitis hic ber quibusdam
               voluptatibus officia expedita corpori.
       </Slide> */}
-      <Slide heading='heading 1' src='https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
-      <Slide heading='heading 2' src='https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
+      <Slide heading='FNULA' src='https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
+      <Slide heading='Second slide label' src='https://petapixel.com/assets/uploads/2021/06/Social-Medias-Impact-on-Landscape-and-Nature-Photography.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
+      <Slide heading='Third slide label' src='https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/landscape-photography-tips-4.jpg?fit=1500%2C908&ssl=1' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
       </div>
      
      <div className='swiper-pagination swiper-pagination-white'></div>

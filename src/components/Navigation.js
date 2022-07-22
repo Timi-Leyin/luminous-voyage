@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap'
+
+import {Link} from 'react-router-dom'
 import logo from "../assets/logo.png"
 
 function Navigation(props) {
@@ -11,43 +12,40 @@ function Navigation(props) {
             <span></span>
             <span></span>
           </button>
-          <a className="navbar-brand text-brand" href="index.html"><img src={logo} width="150px"/></a>
+          <Link className="navbar-brand text-brand" to="/"><img src={logo} width="150px" alt='logo'/></Link>
     
           <div className="navbar-collapse collapse justify-content-center" id="navbarDefault">
             <ul className="navbar-nav">
     
               <li className="nav-item">
-                <a className="nav-link active" href="index.html">Home</a>
+                <Link className="nav-link active" to="/">Home</Link>
               </li>
     
               <li className="nav-item">
-                <a className="nav-link " href="about.html">About</a>
+                <Link className="nav-link " to="/about">About</Link>
               </li>
     
               <li className="nav-item">
-                <a className="nav-link " href="property-grid.html">Property</a>
-              </li>
-    
-              <li className="nav-item">
-                <a className="nav-link " href="blog-grid.html">Blog</a>
+                <Link className="nav-link " to="/holiday">Holiday</Link>
               </li>
     
               <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</Link>
                 <div className="dropdown-menu">
-                  <a className="dropdown-item " href="property-single.html">Property Single</a>
-                  <a className="dropdown-item " href="blog-single.html">Blog Single</a>
-                  <a className="dropdown-item " href="agents-grid.html">Agents Grid</a>
-                  <a className="dropdown-item " href="agent-single.html">Agent Single</a>
+                  <Link className="dropdown-item " to="/">Another Action</Link>
+                  <Link className="dropdown-item " to="/"> Single</Link>
                 </div>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="contact.html">Contact</a>
+                <Link className="nav-link " to="/">More Deal</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link " to="/">Another Deal</Link>
               </li>
             </ul>
           </div>
     
-          <button type="button" className="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
+          <button type="button" className="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
             <i className="bi bi-search">search</i>
           </button>
     
