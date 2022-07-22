@@ -1,53 +1,46 @@
-import React, { useState } from 'react';
-import Carousel from 'react-bootstrap/Carousel'
+import React, { useState, useRef, useEffect } from "react";
+// import Carousel from 'react-bootstrap/Carousel'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import Swiper from "swiper";
+import "swiper/css";
+import Slide from './Slide'
 
 function HeroSection(props) {
-    const [index, setIndex] = useState(0);
+  const ref = useRef(null);
+  useEffect(() => {
+    if (!ref.current) return;
+    new Swiper(ref.current, {
+      keyboard:true,
+      effect:'fade',
+      pagination:{
+        el:'.swiper-pagination',
+        clickable:true
+      },
+      navigation:{
+        nextEl:'.swiper-button-next',
+        prevEl:'.swiper-button-prev'
+      }
+    });
+  }, [ref]);
+  return (
+    <div className="swiper" ref={ref}>
+      <div className="swiper-wrapper">
+      {/* <Slide>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,
+              cupiditate ea nam praesentium debitis hic ber quibusdam
+              voluptatibus officia expedita corpori.
+      </Slide> */}
+      <Slide heading='heading 1' src='https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
+      <Slide heading='heading 2' src='https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg' subHeading='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis,' btn='Get Started' to='/' />
+      </div>
+     
+     <div className='swiper-pagination swiper-pagination-white'></div>
 
-    const handleSelect = (selectedIndex, e) => {
-        setIndex(selectedIndex);
-    };
-    return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://rioslandscapingtree.files.wordpress.com/2021/09/114310.jpg"
-          alt="First slide"
-        />
-        <Carousel.Caption>
-          <h3>FNULA</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://petapixel.com/assets/uploads/2021/06/Social-Medias-Impact-on-Landscape-and-Nature-Photography.jpg"
-          alt="Second slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2021/03/landscape-photography-tips-4.jpg?fit=1500%2C908&ssl=1"
-          alt="Third slide"
-        />
-
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
-    </Carousel>
-    );
+     <div className='swiper-button-next swiper-button-white'></div>
+     <div className='swiper-button-prev swiper-button-white'></div>
+    </div>
+  );
 }
 
 export default HeroSection;
